@@ -13,10 +13,17 @@ import java.util.List;
 public interface ProductsListDao {
     @Query("Select * from Products")
     List<Products> getAllProductsList();
+    List<Category> getAllCategoryList();
     @Insert
     void insertProduct(Products...products);
     @Update
     void updateProduct(Products products);
     @Delete
     void deleteProduct(Products products);
+    @Insert
+    void insertCategory(Category...categories);
+    @Update
+    void updateCategory(Category categories);
+    @Delete
+    void deleteCategory(Category categories);
 }
