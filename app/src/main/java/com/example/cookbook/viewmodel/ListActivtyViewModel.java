@@ -29,4 +29,18 @@ public class ListActivtyViewModel extends AndroidViewModel {
         listOfCategory.postValue(null);
     }
     }
+    public void insertCategory(String catName){
+        Category category=new Category();
+        category.categoryName=catName;
+        appDatabase.productsListDao().insertCategory(category);
+        getAllCategoryList();
+    }
+    public void updateCategory(Category category){
+        appDatabase.productsListDao().updateCategory(category);
+        getAllCategoryList();
+    }
+    public void deleteCatgory(Category category){
+        appDatabase.productsListDao().deleteCategory(category);
+        getAllCategoryList();;
+    }
 }
